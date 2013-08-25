@@ -229,6 +229,9 @@ bpwatch stop collectstatic
 set-env PATH '$HOME/.heroku/python/bin:$PATH'
 set-env PYTHONUNBUFFERED true
 set-env PYTHONHOME /app/.heroku/python
+echo xxx custom
+pwd
+ls -1
 set-env APP_VERSION $(git rev-parse --short HEAD)
 cd data
 set-env DATA_VERSION $(git rev-parse --short HEAD)
