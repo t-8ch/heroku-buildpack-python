@@ -231,7 +231,7 @@ set-env PYTHONUNBUFFERED true
 set-env PYTHONHOME /app/.heroku/python
 echo xxx custom
 pwd
-ls -1
+ls -la
 set-env APP_VERSION $(git rev-parse --short HEAD)
 cd data
 set-env DATA_VERSION $(git rev-parse --short HEAD)
