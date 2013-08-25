@@ -40,7 +40,7 @@ BUILDPACK_VERSION=v28
 [ ! "$REQUEST_ID" ] && REQUEST_ID=$SLUG_ID
 
 # Sanitizing environment variables.
-unset GIT_DIR PYTHONHOME PYTHONPATH LD_LIBRARY_PATH LIBRARY_PATH
+unset PYTHONHOME PYTHONPATH LD_LIBRARY_PATH LIBRARY_PATH
 
 bpwatch init $LOGPLEX_KEY
 bpwatch build python $BUILDPACK_VERSION $REQUEST_ID
@@ -236,6 +236,7 @@ set-env APP_VERSION $(git rev-parse --short HEAD)
 cd data
 set-env DATA_VERSION $(git rev-parse --short HEAD)
 cd ..
+unset GIT_DIR
 set-default-env LIBRARY_PATH /app/.heroku/vendor/lib
 set-default-env LD_LIBRARY_PATH /app/.heroku/vendor/lib
 set-default-env LANG en_US.UTF-8
